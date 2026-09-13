@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smoothie Frenzy Prototype</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Smoothie Frenzy</h1>
+
+    <p>
+      Harvest fruit in groups of 2 or more, then fill the smoothie order!
+    </p>
+
+    <div class="top-controls">
+  <div class="level-selector">
+    <label for="level-select">
+      Level:
+    </label>
+
+    <select id="level-select"></select>
+  </div>
+
+  <button id="sound-toggle">
+    🔊 Sound On
+  </button>
+
+  <button id="pause-button">
+    Pause
+  </button>
+</div>
+
+    <div class="game-layout">
+
+      <section class="order-panel">
+        <h2>Orders</h2>
+      
+        <div id="orders"></div>
+      </section>
+
+      <section class="center-panel">
+        <section class="tray-section">
+          <h2>Fruit Tray</h2>
+
+          <div id="tray"></div>
+
+          <p id="tray-count">0 / 6</p>
+        </section>
+
+        <div id="board"></div>
+
+        <div id="level-info">
+          <span id="level-number"></span>
+          <span id="level-name"></span>
+        </div>
+        
+        <div class="board-controls">
+          <button id="reshuffle-button">
+            Reshuffle
+          </button>
+        </div>
+
+        <p id="message">Ready!</p>
+      </section>
+
+      <section id="blender-section">
+        <h2>Blenders</h2>
+      
+        <p id="blender-status">
+          Blender ready
+        </p>
+      
+        <div id="blender-contents"></div>
+      
+        <div class="blender-actions">
+          <button id="load-button">
+            Load Blender
+          </button>
+      
+          <button id="serve-button">
+            Serve Smoothie
+          </button>
+        </div>
+      
+        <p id="served-count"></p>
+      </section>
+      </section>
+
+      <div id="score-display">
+        Score: 0
+      </div>
+
+      <div class="frenzy-section">
+        <div class="frenzy-header">
+          <span>Frenzy</span>
+          <span id="frenzy-text">0 / 100</span>
+        </div>
+      
+        <div id="frenzy-container">
+          <div id="frenzy-bar"></div>
+        </div>
+      
+        <div id="frenzy-status"></div>
+      </div>
+      
+      <div id="pause-screen" class="hidden">
+        <div class="pause-card">
+          <h2>Paused</h2>
+      
+          <button id="resume-button">
+            Resume
+          </button>
+      
+          <button id="restart-level-button">
+            Restart Level
+          </button>
+        </div>
+      </div>
+
+      <div id="level-intro-screen" class="hidden">
+        <div class="level-intro-card">
+          <p id="intro-level-number"></p>
+
+          <h2 id="intro-level-name"></h2>
+
+          <p id="intro-goal"></p>
+
+          <div id="intro-star-goals"></div>
+
+          <p id="intro-high-score"></p>
+
+          <div id="intro-fruits"></div>
+
+          <div id="intro-details"></div>
+
+          <button id="start-level-button">
+            Start Level
+          </button>
+        </div>
+      </div>
+
+      <div id="results-screen" class="hidden">
+        <div class="results-card">
+          <h2>Results</h2>
+      
+          <p id="results-served"></p>
+          <p id="results-lost"></p>
+          <p id="results-wasted"></p>
+          <p id="results-score"></p>
+
+          <div id="results-stars"></div>
+          <p id="results-clear-status"></p>
+      
+          <div class="results-buttons">
+            <button id="restart-button" class="results-button">
+              Play Again
+            </button>
+          
+            <button id="next-level-button" class="results-button">
+              Next Level
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
