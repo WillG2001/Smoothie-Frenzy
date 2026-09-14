@@ -36,16 +36,13 @@
 
       <section class="order-panel">
         <h2>Orders</h2>
-      
         <div id="orders"></div>
       </section>
 
       <section class="center-panel">
         <section class="tray-section">
           <h2>Fruit Tray</h2>
-
           <div id="tray"></div>
-
           <p id="tray-count">0 / 6</p>
         </section>
 
@@ -55,56 +52,52 @@
           <span id="level-number"></span>
           <span id="level-name"></span>
         </div>
-        
+
         <div class="board-controls">
-          <button id="reshuffle-button">
-            Reshuffle
+          <button id="reshuffle-button">Reshuffle</button>
+
+          <button id="refresh-button" class="hidden">
+            Refresh Board
           </button>
         </div>
 
         <p id="message">Ready!</p>
       </section>
 
-      <section id="blender-section">
-        <h2>Blenders</h2>
-      
-        <p id="blender-status">
-          Blender ready
-        </p>
-      
-        <div id="blender-contents"></div>
-      
-        <div class="blender-actions">
-          <button id="load-button">
-            Load Blender
-          </button>
-      
-          <button id="serve-button">
-            Serve Smoothie
-          </button>
+      <section id="blender-section" class="blender-panel">
+        <div class="service-header">
+          <div id="score-display">Score: 0</div>
+
+          <div class="frenzy-section">
+            <div class="frenzy-header">
+              <span>Frenzy</span>
+              <span id="frenzy-text">0 / 100</span>
+            </div>
+
+            <div id="frenzy-container">
+              <div id="frenzy-bar"></div>
+            </div>
+
+            <div id="frenzy-status"></div>
+          </div>
         </div>
-      
+
+        <h2>Blenders</h2>
+
+        <p id="blender-status">Blender ready</p>
+
+        <div class="blender-actions">
+          <button id="load-button">Load Blender</button>
+          <button id="serve-button">Serve Smoothie</button>
+        </div>
+
+        <div id="blender-contents"></div>
+
         <p id="served-count"></p>
       </section>
-      </section>
 
-      <div id="score-display">
-        Score: 0
-      </div>
+    </div>
 
-      <div class="frenzy-section">
-        <div class="frenzy-header">
-          <span>Frenzy</span>
-          <span id="frenzy-text">0 / 100</span>
-        </div>
-      
-        <div id="frenzy-container">
-          <div id="frenzy-bar"></div>
-        </div>
-      
-        <div id="frenzy-status"></div>
-      </div>
-      
       <div id="pause-screen" class="hidden">
         <div class="pause-card">
           <h2>Paused</h2>

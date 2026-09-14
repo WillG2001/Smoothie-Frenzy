@@ -128,7 +128,72 @@ const FRUIT_LIBRARY = {
   redApple: {
     id: "redApple",
     icon: "🍎"
-  }
+  },
+
+  greenApple: {
+    id: "greenApple",
+    icon: "🍏"
+  },
+
+  cherry: {
+    id: "cherry",
+    icon: "🍒"
+  },
+
+  grape: {
+    id: "grape",
+    icon: "🍇"
+  },
+
+  spinach: {
+    id: "spinach",
+    icon: "🥬"
+  },
+
+  watermelon: {
+    id: "watermelon",
+    icon: "🍉"
+  },
+
+  honey: {
+    id: "honey",
+    icon: "🍯"
+  },
+
+  peanutButter: {
+    id: "peanutButter",
+    icon: "🥜"
+  },
+
+  chocolate: {
+    id: "chocolate",
+    icon: "🍫"
+  },
+
+  lemon: {
+    id: "lemon",
+    icon: "🍋"
+  },
+
+  pear: {
+    id: "pear",
+    icon: "🍐"
+  },
+
+  melon: {
+    id: "melon",
+    icon: "🍈"
+  },
+
+  iceCream: {
+    id: "iceCream",
+    icon: "🍦"
+  },
+
+  starfruit: {
+    id: "starfruit",
+    icon: "⭐️"
+  },
 };
 
 const RECIPE_LIBRARY = {
@@ -409,6 +474,223 @@ const RECIPE_LIBRARY = {
     blendTime: 3000
   },
 
+  greenGlow: {
+    id: "greenGlow",
+    name: "Green Glow",
+
+    ingredients: {
+      greenApple: 2,
+      kiwi: 2
+    },
+
+    blendTime: 3000
+  },
+
+  tropicTart: {
+    id: "tropicTart",
+    name: "Tropic Tart",
+
+    ingredients: {
+      greenApple: 2,
+      pineapple: 2
+    },
+
+    blendTime: 3000
+  },
+
+  appleberry: {
+    id: "appleberry",
+    name: "Appleberry",
+
+    ingredients: {
+      redApple: 2,
+      strawberry: 2
+    },
+
+    blendTime: 3000
+  },
+
+  greenPeach: {
+    id: "greenPeach",
+    name: "Green Peach",
+
+    ingredients: {
+      greenApple: 2,
+      peach: 2
+    },
+
+    blendTime: 3000
+  },
+
+  doubleAppleDelight: {
+    id: "doubleAppleDelight",
+    name: "Double Apple Delight",
+
+    ingredients: {
+      greenApple: 3,
+      redApple: 1
+    },
+
+    blendTime: 3000
+  },
+
+  chocolateCoveredStrawberry: {
+    id: "chocolateCoveredStrawberry",
+    name: "Chocolate Covered Strawberry",
+
+    ingredients: {
+      chocolate: 2,
+      strawberry: 2
+    },
+
+    blendTime: 3000
+  },
+
+  pbandj: {
+    id: "pbandj",
+    name: "PB & J",
+
+    ingredients: {
+      peanutButter: 2,
+      strawberry: 2
+    },
+
+    blendTime: 3000
+  },
+
+  peanutButterChocolate: {
+    id: "peanutButterChocolate",
+    name: "Peanut Butter Chocolate",
+
+    ingredients: {
+      peanutButter: 2,
+      chocolate: 2
+    },
+
+    blendTime: 3000
+  },
+
+  peanutButterBanana: {
+    id: "peanutButterBanana",
+    name: "Peanut Butter Banana",
+
+    ingredients: {
+      peanutButter: 2,
+      banana: 2
+    },
+
+    blendTime: 3000
+  },
+
+  choconana: {
+    id: "choconana",
+    name: "Choconana",
+
+    ingredients: {
+      chocolate: 2,
+      banana: 2
+    },
+
+    blendTime: 3000
+  },
+
+  vanillaShake: {
+    id: "vanillaShake",
+    name: "Vanilla Shake",
+
+    ingredients: {
+      iceCream: 4
+    },
+
+    blendTime: 3000
+  },
+
+  chocolateShake: {
+    id: "chocolateShake",
+    name: "Chocolate Shake",
+
+    ingredients: {
+      iceCream: 2,
+      chocolate: 2
+    },
+
+    blendTime: 3000
+  },
+
+  strawberryCream: {
+    id: "strawberryCream",
+    name: "Strawberry Cream",
+
+    ingredients: {
+      iceCream: 2,
+      strawberry: 2
+    },
+
+    blendTime: 3000
+  },
+
+  bananaBliss: {
+    id: "bananaBliss",
+    name: "Banana Bliss",
+
+    ingredients: {
+      iceCream: 2,
+      banana: 2
+    },
+
+    blendTime: 3000
+  },
+
+  peanutButterBlast: {
+    id: "peanutButterBlast",
+    name: "Peanut Butter Blast",
+
+    ingredients: {
+      iceCream: 2,
+      peanutButter: 2
+    },
+
+    blendTime: 3000
+  },
+
+  cherryBerry: {
+    id: "cherryBerry",
+    name: "Cherry Berry",
+
+    ingredients: {
+      cherry: 2,
+      strawberry: 2
+    },
+
+    blendTime: 3000
+  },
+
+  blueCherryBlast: {
+    id: "blueCherryBlast",
+    name: "Blue Cherry Blast",
+
+    ingredients: {
+      cherry: 2,
+      blueberry: 2
+    },
+
+    blendTime: 3000
+  },
+
+  pbChoconana: {
+    id: "pbChoconana",
+    name: "PB Choconana",
+
+    ingredients: {
+      peanutButter: 2,
+      chocolate: 2,
+      banana: 2
+    },
+
+    blendTime: 4000
+  },
+
+
   applesToOranges: {
     id: "applesToOranges",
     name: "Apples To Oranges",
@@ -525,6 +807,32 @@ const RECIPE_LIBRARY = {
     blendTime: 4000
   },
 
+  cherryOrchard: {
+    id: "cherryOrchard",
+    name: "Cherry Orchard",
+
+    ingredients: {
+      cherry: 3,
+      greenApple: 2,
+      strawberry: 1
+    },
+
+    blendTime: 4000
+  },
+
+  cherrySplit: {
+    id: "cherrySplit",
+    name: "Cherry Split",
+
+    ingredients: {
+      cherry: 3,
+      banana: 2,
+      pineapple: 1
+    },
+
+    blendTime: 4000
+  },
+
   fuzzyFruits: {
     id: "fuzzyFruits",
     name: "Fuzzy Fruits",
@@ -576,6 +884,19 @@ const RECIPE_LIBRARY = {
     blendTime: 4000
   },
 
+  greenMachineII: {
+    id: "greenMachineII",
+    name: "Green Machine II",
+
+    ingredients: {
+      greenApple: 2,
+      kiwi: 2,
+      banana: 2
+    },
+
+    blendTime: 4000
+  },
+
   bigKahuna: {
     id: "bigKahuna",
     name: "Big Kahuna",
@@ -603,6 +924,19 @@ const RECIPE_LIBRARY = {
     blendTime: 4000
   },
 
+  orchardMix: {
+    id: "orchardMix",
+    name: "Orchard Mix",
+
+    ingredients: {
+      greenApple: 2,
+      redApple: 2,
+      peach: 2
+    },
+
+    blendTime: 4000
+  },
+
   tropicalOrchard: {
     id: "tropicalOrchard",
     name: "Tropical Orchard",
@@ -614,7 +948,34 @@ const RECIPE_LIBRARY = {
     },
 
     blendTime: 5000
-  }
+  },
+
+  blueAppleBlast: {
+    id: "blueAppleBlast",
+    name: "Blue Apple Blast",
+
+    ingredients: {
+      greenApple: 4,
+      blueberry: 2,
+      banana: 2
+    },
+
+    blendTime: 5000
+  },
+
+  fruitBasket: {
+    id: "fruitBasket",
+    name: "Fruit Basket",
+
+    ingredients: {
+      greenApple: 2,
+      redApple: 2,
+      mango: 2,
+      peach: 2
+    },
+
+    blendTime: 5000
+  },
 };
 
 const LEVELS = {
@@ -626,6 +987,8 @@ const LEVELS = {
 
     trayCapacity: 6,
     blenderCount: 1,
+
+    refreshUses: 0,
 
     maxOrders: 1,
 
@@ -669,6 +1032,8 @@ const LEVELS = {
     trayCapacity: 6,
     blenderCount: 1,
 
+    refreshUses: 0,
+
     maxOrders: 1,
 
     smoothieGoal: 6,
@@ -710,6 +1075,8 @@ const LEVELS = {
     trayCapacity: 6,
     blenderCount: 1,
 
+    refreshUses: 0,
+    
     maxOrders: 2,
 
     smoothieGoal: 7,
@@ -755,6 +1122,8 @@ const LEVELS = {
     trayCapacity: 6,
     blenderCount: 1,
 
+    refreshUses: 0,
+
     maxOrders: 2,
 
     smoothieGoal: 8,
@@ -799,6 +1168,8 @@ const LEVELS = {
     trayCapacity: 6,
     blenderCount: 1,
 
+    refreshUses: 0,
+    
     maxOrders: 3,
 
     smoothieGoal: 9,
@@ -842,6 +1213,8 @@ const LEVELS = {
     trayCapacity: 8,
     blenderCount: 1,
 
+    refreshUses: 0,
+    
     maxOrders: 2,
 
     smoothieGoal: 9,
@@ -890,6 +1263,8 @@ const LEVELS = {
     trayCapacity: 8,
     blenderCount: 1,
 
+    refreshUses: 0,
+    
     maxOrders: 2,
 
     smoothieGoal: 10,
@@ -936,6 +1311,8 @@ const LEVELS = {
     trayCapacity: 8,
     blenderCount: 1,
 
+    refreshUses: 0,
+    
     maxOrders: 2,
 
     smoothieGoal: 10,
@@ -981,6 +1358,8 @@ const LEVELS = {
     trayCapacity: 8,
     blenderCount: 1,
 
+    refreshUses: 0,
+    
     maxOrders: 2,
 
     smoothieGoal: 11,
@@ -1027,6 +1406,8 @@ const LEVELS = {
     trayCapacity: 8,
     blenderCount: 1,
 
+    refreshUses: 0,
+    
     maxOrders: 3,
 
     smoothieGoal: 12,
@@ -1072,6 +1453,8 @@ const LEVELS = {
     trayCapacity: 8,
     blenderCount: 1,
 
+    refreshUses: 0,
+    
     maxOrders: 2,
 
     smoothieGoal: 8,
@@ -1118,6 +1501,8 @@ const LEVELS = {
 
     trayCapacity: 8,
     blenderCount: 1,
+
+    refreshUses: 0,
 
     maxOrders: 2,
 
@@ -1167,6 +1552,8 @@ const LEVELS = {
     trayCapacity: 8,
     blenderCount: 2,
 
+    refreshUses: 0,
+
     maxOrders: 3,
 
     smoothieGoal: 10,
@@ -1215,6 +1602,8 @@ const LEVELS = {
     trayCapacity: 8,
     blenderCount: 2,
 
+    refreshUses: 0,
+    
     maxOrders: 3,
 
     smoothieGoal: 10,
@@ -1261,6 +1650,8 @@ const LEVELS = {
     trayCapacity: 8,
     blenderCount: 2,
 
+    refreshUses: 0,
+    
     maxOrders: 4,
 
     smoothieGoal: 12,
@@ -1308,6 +1699,8 @@ const LEVELS = {
     trayCapacity: 8,
     blenderCount: 2,
 
+    refreshUses: 0,
+    
     maxOrders: 3,
 
     smoothieGoal: 10,
@@ -1358,6 +1751,8 @@ const LEVELS = {
     trayCapacity: 8,
     blenderCount: 2,
 
+    refreshUses: 0,
+    
     maxOrders: 3,
 
     smoothieGoal: 11,
@@ -1409,6 +1804,8 @@ const LEVELS = {
     trayCapacity: 10,
     blenderCount: 2,
 
+    refreshUses: 0,
+    
     maxOrders: 3,
 
     smoothieGoal: 12,
@@ -1462,6 +1859,8 @@ const LEVELS = {
     trayCapacity: 10,
     blenderCount: 2,
 
+    refreshUses: 0,
+    
     maxOrders: 3,
 
     smoothieGoal: 13,
@@ -1515,6 +1914,8 @@ const LEVELS = {
     trayCapacity: 10,
     blenderCount: 2,
 
+    refreshUses: 0,
+    
     maxOrders: 4,
 
     smoothieGoal: 14,
@@ -1567,6 +1968,8 @@ const LEVELS = {
     trayCapacity: 10,
     blenderCount: 2,
 
+    refreshUses: 0,
+    
     maxOrders: 3,
 
     smoothieGoal: 12,
@@ -1616,6 +2019,8 @@ const LEVELS = {
     trayCapacity: 10,
     blenderCount: 2,
 
+    refreshUses: 0,
+    
     maxOrders: 3,
 
     smoothieGoal: 13,
@@ -1656,6 +2061,284 @@ const LEVELS = {
       "sunsetSplash",
       "strawberryKiwi"
     ]
+  },
+
+  "3-3": {
+    name: "Super Six",
+
+    rows: 7,
+    cols: 7,
+
+    trayCapacity: 10,
+    blenderCount: 2,
+
+    refreshUses: 0,
+    
+    maxOrders: 3,
+
+    smoothieGoal: 13,
+
+    stars: {
+      one: 4900,
+      two: 6000,
+      three: 6900
+    },
+
+    customerPatience: 40000,
+
+    customerTypes: {
+      normal: 0.65,
+      relaxed: 0.25,
+      impatient: 0.10
+    },
+
+    customerArrivalDelay: 5000,
+
+    reshuffleTime: 3000,
+
+    fruit: [
+      "greenApple",
+      "kiwi",
+      "blueberry",
+      "banana",
+      "coconut",
+      "pineapple"
+    ],
+
+    recipes: [
+      "beachBum",
+      "berryBanana",
+      "kiwiKick",
+      "blueTropic",
+      "pinaColada",
+      "kiwiColada",
+      "greenGlow",
+      "tropicTart",
+      "greenMachineII",
+      "blueAppleBlast"
+    ]
+  },
+
+  "3-4": {
+    name: "Fresh Pickings",
+
+    rows: 7,
+    cols: 7,
+
+    trayCapacity: 10,
+    blenderCount: 2,
+
+    refreshUses: 2,
+
+    maxOrders: 3,
+
+    smoothieGoal: 14,
+
+    stars: {
+      one: 5100,
+      two: 6200,
+      three: 7300
+    },
+
+    customerPatience: 37500,
+
+    customerTypes: {
+      normal: 0.45,
+      relaxed: 0.30,
+      impatient: 0.25
+    },
+
+    customerArrivalDelay: 5000,
+
+    reshuffleTime: 3000,
+
+    fruit: [
+      "greenApple",
+      "kiwi",
+      "redApple",
+      "strawberry",
+      "mango",
+      "peach"
+    ],
+
+    recipes: [
+      "strawberryKiwi",
+      "islandZing",
+      "peachberry",
+      "appleberry",
+      "greenPeach",
+      "orchardMix",
+      "doubleAppleDelight",
+      "fruitBasket"
+    ]
+  },
+
+  "3-5": {
+    name: "Lunch Break Rush",
+
+    rows: 7,
+    cols: 7,
+
+    trayCapacity: 10,
+    blenderCount: 2,
+
+    refreshUses: 3,
+
+    maxOrders: 4,
+
+    smoothieGoal: 15,
+
+    stars: {
+      one: 5900,
+      two: 6800,
+      three: 7500
+    },
+
+    customerPatience: 40000,
+
+    customerTypes: {
+      normal: 0.50,
+      relaxed: 0.20,
+      impatient: 0.30
+    },
+
+    customerArrivalDelay: 4000,
+
+    reshuffleTime: 3000,
+
+    fruit: [
+      "pineapple",
+      "kiwi",
+      "orange",
+      "coconut",
+      "blueberry",
+      "strawberry"
+    ],
+
+    recipes: [
+      "veryBerry",
+      "orangeBerry",
+      "sunsetSplash",
+      "blueTropic",
+      "strawberryKiwi",
+      "pinaColada",
+      "cocoStrawberry",
+      "sunriseRefresher",
+      "kiwiColada",
+      "pinaBerry"
+    ]
+  },
+
+  "3-6": {
+    name: "Triple Threat",
+
+    rows: 7,
+    cols: 7,
+
+    trayCapacity: 10,
+    blenderCount: 3,
+
+    refreshUses: 3,
+
+    maxOrders: 4,
+
+    smoothieGoal: 13,
+
+    stars: {
+      one: 5300,
+      two: 6000,
+      three: 6700
+    },
+
+    customerPatience: 37000,
+
+    customerTypes: {
+      normal: 0.40,
+      relaxed: 0.30,
+      impatient: 0.30
+    },
+
+    customerArrivalDelay: 5000,
+
+    reshuffleTime: 3000,
+
+    fruit: [
+      "banana",
+      "pineapple",
+      "strawberry",
+      "blueberry",
+      "greenApple",
+      "cherry"
+    ],
+
+    recipes: [
+      "cherryBerry",
+      "blueCherryBlast",
+      "cherryOrchard",
+      "cherrySplit",
+      "veryBerry",
+      "beachBum",
+      "blueTropic",
+      "tropicTart",
+      "blueAppleBlast"
+    ]
+  },
+
+  "9-1": {
+    name: "Shake Things Up",
+
+    rows: 9,
+    cols: 9,
+
+    trayCapacity: 16,
+    blenderCount: 4,
+
+    refreshUses: 4,
+
+    maxOrders: 5,
+
+    smoothieGoal: 21,
+
+    stars: {
+      one: 8000,
+      two: 8750,
+      three: 9500
+    },
+
+    customerPatience: 22500,
+
+    customerTypes: {
+      normal: 0.60,
+      relaxed: 0.10,
+      impatient: 0.30
+    },
+
+    customerArrivalDelay: 7000,
+
+    reshuffleTime: 3000,
+
+    fruit: [
+      "iceCream",
+      "chocolate",
+      "strawberry",
+      "banana",
+      "peanutButter",
+    ],
+
+    recipes: [
+      "vanillaShake",
+      "chocolateShake",
+      "strawberryCream",
+      "bananaBliss",
+      "peanutButterBlast",
+      "peanutButterChocolate",
+      "peanutButterBanana",
+      "choconana",
+      "pbChoconana",
+      "chocolateCoveredStrawberry",
+      "pbandj",
+      "strawberryBanana"
+    ]
   }
 };
 
@@ -1683,7 +2366,11 @@ const LEVEL_ORDER = [
   "2-9",
   "2-10",
   "3-1",
-  "3-2"
+  "3-2",
+  "3-3",
+  "3-4",
+  "3-5",
+  "3-6",
 ];
 
 const SAVE_KEY =
@@ -1727,6 +2414,9 @@ let gamePaused = false;
 let levelIntroActive = false;
 
 let boardAnimating = false;
+
+let REFRESH_USES = 0;
+let refreshesRemaining = 0;
 
 let orders = [];
 let selectedOrderId = null;
@@ -2033,6 +2723,11 @@ const reshuffleButton =
     "reshuffle-button"
   );
 
+const refreshButton =
+  document.getElementById(
+    "refresh-button"
+  );
+
 
   function randomFruit() {
     const index =
@@ -2275,19 +2970,111 @@ function renderAll() {
   renderTray();
   renderOrders();
   renderBlender();
+  renderRefreshButton();
   updateScoreDisplay();
   renderFrenzy();
 }
 
+function updateBoardSizing() {
+  const largestDimension =
+    Math.max(ROWS, COLS);
+
+  /*
+   * Preferred maximum size based
+   * on the board dimensions.
+   */
+  let preferredTileSize = 64;
+
+  if (largestDimension >= 7) {
+    preferredTileSize = 56;
+  }
+
+  if (largestDimension >= 8) {
+    preferredTileSize = 50;
+  }
+
+  /*
+   * Leave room vertically for:
+   * header, tray, level info,
+   * controls, and message.
+   */
+  const availableHeight =
+    Math.max(
+      320,
+      window.innerHeight - 310
+    );
+
+  /*
+   * Leave some room horizontally
+   * for the order/service panels.
+   */
+  const availableWidth =
+    Math.min(
+      620,
+      window.innerWidth * 0.48
+    );
+
+  const gap =
+    largestDimension >= 8
+      ? 4
+      : 5;
+
+  const boardPadding = 20;
+
+  const widthBasedSize =
+    Math.floor(
+      (
+        availableWidth -
+        boardPadding -
+        gap * (COLS - 1)
+      ) / COLS
+    );
+
+  const heightBasedSize =
+    Math.floor(
+      (
+        availableHeight -
+        boardPadding -
+        gap * (ROWS - 1)
+      ) / ROWS
+    );
+
+  const tileSize =
+    Math.max(
+      42,
+      Math.min(
+        preferredTileSize,
+        widthBasedSize,
+        heightBasedSize
+      )
+    );
+
+  boardElement.style.setProperty(
+    "--tile-size",
+    `${tileSize}px`
+  );
+
+  boardElement.style.setProperty(
+    "--board-gap",
+    `${gap}px`
+  );
+
+  boardElement.style.setProperty(
+    "--tile-pitch",
+    `${tileSize + gap}px`
+  );
+
+  boardElement.style.gridTemplateColumns =
+    `repeat(${COLS}, var(--tile-size))`;
+
+  boardElement.style.gridTemplateRows =
+    `repeat(${ROWS}, var(--tile-size))`;
+}
 
 function renderBoard() {
   boardElement.innerHTML = "";
 
-  boardElement.style.gridTemplateColumns =
-    `repeat(${COLS}, 64px)`;
-
-  boardElement.style.gridTemplateRows =
-    `repeat(${ROWS}, 64px)`;
+  updateBoardSizing();
 
   for (let row = 0; row < ROWS; row++) {
     for (let col = 0; col < COLS; col++) {
@@ -2335,11 +3122,7 @@ function renderBoardWithFall(
 ) {
   boardElement.innerHTML = "";
 
-  boardElement.style.gridTemplateColumns =
-    `repeat(${COLS}, 64px)`;
-
-  boardElement.style.gridTemplateRows =
-    `repeat(${ROWS}, 64px)`;
+  updateBoardSizing();
 
   for (
     let row = 0;
@@ -3562,7 +4345,77 @@ function finishManualReshuffle() {
   renderBoard();
 }
 
+function cancelReshuffle() {
+  reshuffling = false;
+  reshuffleTimeRemaining = 0;
 
+  boardElement.classList.remove(
+    "reshuffling"
+  );
+
+  reshuffleButton.textContent =
+    "Reshuffle";
+
+  reshuffleButton.disabled =
+    false;
+}
+
+function refreshBoard() {
+  if (
+    gamePaused ||
+    levelIntroActive ||
+    levelComplete ||
+    boardAnimating ||
+    reshuffling ||
+    refreshesRemaining <= 0
+  ) {
+    return;
+  }
+
+  refreshesRemaining--;
+
+  resetSelection();
+
+  board = [];
+
+  for (
+    let row = 0;
+    row < ROWS;
+    row++
+  ) {
+    const newRow = [];
+
+    for (
+      let col = 0;
+      col < COLS;
+      col++
+    ) {
+      newRow.push(
+        randomFruit()
+      );
+    }
+
+    board.push(newRow);
+  }
+
+  /*
+   * Make sure the refreshed board
+   * contains at least one valid move.
+   */
+  if (!hasValidMove()) {
+    shuffleUntilPlayable();
+  }
+
+  messageElement.textContent =
+    `Board refreshed! ${refreshesRemaining} refresh${
+      refreshesRemaining === 1
+        ? ""
+        : "es"
+    } remaining.`;
+
+  renderBoard();
+  renderRefreshButton();
+}
 
 function updateSelectionDisplay() {
   const tiles =
@@ -4377,6 +5230,31 @@ function updateScoreDisplay() {
     }
   }
 
+  function renderRefreshButton() {
+  if (REFRESH_USES <= 0) {
+    refreshButton.classList.add(
+      "hidden"
+    );
+
+    return;
+  }
+
+  refreshButton.classList.remove(
+    "hidden"
+  );
+
+  refreshButton.textContent =
+    `Refresh Board (${refreshesRemaining})`;
+
+  refreshButton.disabled =
+    refreshesRemaining <= 0 ||
+    boardAnimating ||
+    reshuffling ||
+    gamePaused ||
+    levelIntroActive ||
+    levelComplete;
+}
+
   function pauseGame() {
     if (
       gamePaused ||
@@ -4472,6 +5350,9 @@ function updateScoreDisplay() {
     TRAY_CAPACITY =
       level.trayCapacity;
 
+    REFRESH_USES =
+      level.refreshUses ?? 0;
+
     BLENDER_COUNT =
       level.blenderCount ?? 1;
 
@@ -4530,6 +5411,10 @@ function updateScoreDisplay() {
     stopAllBlenderSounds();
     playSound("levelComplete");
 
+    levelComplete = true;
+
+    cancelReshuffle();
+
     const starsEarned =
       getStarRating(score);
 
@@ -4569,8 +5454,6 @@ function updateScoreDisplay() {
     saveProgress();
 
     renderLevelSelector();
-
-    levelComplete = true;
 
     if (starsEarned >= 1) {
       unlockNextLevel();
@@ -4887,6 +5770,8 @@ function resetSaveData() {
 }
 
   function restartGame() {
+    cancelReshuffle();
+
     board = [];
     tray = [];
   
@@ -4900,6 +5785,9 @@ function resetSaveData() {
     smoothiesServed = 0;
     customersLost = 0;
     fruitWasted = 0;
+
+    refreshesRemaining =
+      REFRESH_USES;
 
     frenzy = 0;
     frenzyActive = false;
@@ -5049,6 +5937,11 @@ restartButton.addEventListener(
     startManualReshuffle
   );
 
+  refreshButton.addEventListener(
+    "click",
+    refreshBoard
+  );
+
   pauseButton.addEventListener(
     "click",
     pauseGame
@@ -5109,6 +6002,17 @@ restartButton.addEventListener(
       }
     }
   );
+
+window.addEventListener(
+  "resize",
+  () => {
+    if (
+      board.length > 0
+    ) {
+      renderBoard();
+    }
+  }
+);
 
 loadProgress();
 
