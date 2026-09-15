@@ -8,12 +8,7 @@
 </head>
 <body>
   <main>
-    <h1>Smoothie Frenzy</h1>
-
-    <p>
-      Harvest fruit in groups of 2 or more, then fill the smoothie order!
-    </p>
-
+    
     <div class="top-controls">
   <div class="level-selector">
     <label for="level-select">
@@ -98,6 +93,166 @@
 
     </div>
 
+    <div id="title-screen">
+  <div class="title-card">
+    <h1>Smoothie Frenzy</h1>
+
+    <p class="title-subtitle">
+      Harvest. Blend. Serve!
+    </p>
+
+    <button id="play-button">
+      Play
+    </button>
+
+    <button
+      id="continue-button"
+      class="hidden"
+    >
+      Continue
+    </button>
+
+    <button
+      id="level-select-button"
+      class="hidden"
+    >
+      Level Select
+    </button>
+
+    <button id="title-how-to-button">
+      How to Play
+    </button>
+  </div>
+</div>
+
+<div
+  id="how-to-screen"
+  class="hidden"
+>
+  <div class="how-to-card">
+    <h2>How to Play</h2>
+
+    <div class="how-to-content">
+      <section>
+        <h3>🍓 Harvest Fruit</h3>
+
+        <p>
+          Click a connected group of
+          2 or more matching fruits
+          to harvest them.
+        </p>
+
+        <p>
+          You can also click and drag
+          through matching fruit to
+          harvest only the pieces you
+          want.
+        </p>
+      </section>
+
+      <section>
+        <h3>🧺 Manage Your Tray</h3>
+
+        <p>
+          Harvested fruit goes into
+          your tray.
+        </p>
+
+        <p>
+          Make sure you have enough
+          room before harvesting.
+          Click a fruit in the tray
+          to discard it.
+        </p>
+      </section>
+
+      <section>
+        <h3>🥤 Fill Orders</h3>
+
+        <p>
+          Select a customer order.
+          When you have the required
+          ingredients, load it into
+          an available blender.
+        </p>
+
+        <p>
+          Once blending is finished,
+          select the order and serve
+          the smoothie.
+        </p>
+      </section>
+
+      <section>
+        <h3>⏱️ Keep Customers Happy</h3>
+
+        <p>
+          Customer patience decreases
+          while they are waiting.
+        </p>
+
+        <p>
+          Serve them before their
+          patience runs out!
+        </p>
+      </section>
+
+      <section>
+        <h3>🔥 Frenzy</h3>
+
+        <p>
+          Harvest fruit and serve
+          smoothies to fill the
+          Frenzy meter.
+        </p>
+
+        <p>
+          During Frenzy, blending is
+          faster and smoothies are
+          worth more points.
+        </p>
+      </section>
+
+      <section>
+        <h3>⭐ Earn Stars</h3>
+
+        <p>
+          Reach the score goals to
+          earn up to 3 stars.
+        </p>
+
+        <p>
+          You need at least 1 star
+          to clear a level.
+        </p>
+      </section>
+    </div>
+
+    <button id="how-to-back-button">
+      Back
+    </button>
+  </div>
+</div>
+
+      <div
+  id="level-select-screen"
+  class="hidden"
+>
+  <div class="level-select-card">
+    <h2>Level Select</h2>
+
+    <div
+      id="title-level-list"
+    ></div>
+
+    <button
+      id="level-select-back-button"
+    >
+      Back
+    </button>
+  </div>
+</div>
+
       <div id="pause-screen" class="hidden">
         <div class="pause-card">
           <h2>Paused</h2>
@@ -105,11 +260,19 @@
           <button id="resume-button">
             Resume
           </button>
+
+          <button id="pause-how-to-button">
+            How to Play
+          </button>
       
           <button id="restart-level-button">
             Restart Level
           </button>
-        </div>
+
+          <button id="return-title-button">
+            Return to Title
+          </button>
+          </div>
       </div>
 
       <div id="level-intro-screen" class="hidden">

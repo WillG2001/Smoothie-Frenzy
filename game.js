@@ -54,6 +54,10 @@ const SOUNDS = {
     "sounds/reshuffle.wav"
   ),
 
+  refresh: new Audio(
+    "sounds/refresh.wav"
+  ),
+
   levelComplete: new Audio(
     "sounds/level-complete.wav"
   )
@@ -82,116 +86,162 @@ const CUSTOMER_TYPES = {
 const FRUIT_LIBRARY = {
   strawberry: {
     id: "strawberry",
+    singular: "strawberry",
+    plural: "strawberries",
     icon: "🍓"
   },
 
   banana: {
     id: "banana",
+    singular: "banana",
+    plural: "bananas",
     icon: "🍌"
   },
 
   blueberry: {
     id: "blueberry",
+    singular: "blueberry",
+    plural: "blueberries",
     icon: "🫐"
   },
 
   orange: {
     id: "orange",
+    singular: "orange",
+    plural: "oranges",
     icon: "🍊"
   },
 
   pineapple: {
     id: "pineapple",
+    singular: "pineapple",
+    plural: "pineapples",
     icon: "🍍"
   },
 
   mango: {
     id: "mango",
+    singular: "mango",
+    plural: "mangoes",
     icon: "🥭"
   },
 
   kiwi: {
     id: "kiwi",
+    singular: "kiwi",
+    plural: "kiwis",
     icon: "🥝"
   },
 
   coconut: {
     id: "coconut",
+    singular: "coconut",
+    plural: "coconuts",
     icon: "🥥"
   },
 
   peach: {
     id: "peach",
+    singular: "peach",
+    plural: "peaches",
     icon: "🍑"
   },
 
   redApple: {
     id: "redApple",
+    singular: "red apple",
+    plural: "red apples",
     icon: "🍎"
   },
 
   greenApple: {
     id: "greenApple",
+    singular: "green apple",
+    plural: "green apples",
     icon: "🍏"
   },
 
   cherry: {
     id: "cherry",
+    singular: "cherry",
+    plural: "cherries",
     icon: "🍒"
   },
 
   grape: {
     id: "grape",
+    singular: "grape",
+    plural: "grapes",
     icon: "🍇"
   },
 
   spinach: {
     id: "spinach",
+    singular: "spinach",
+    plural: "spinach",
     icon: "🥬"
   },
 
   watermelon: {
     id: "watermelon",
+    singular: "watermelon",
+    plural: "watermelons",
     icon: "🍉"
   },
 
   honey: {
     id: "honey",
+    singular: "honey",
+    plural: "honey",
     icon: "🍯"
   },
 
   peanutButter: {
     id: "peanutButter",
+    singular: "peanut butter",
+    plural: "peanut butter",
     icon: "🥜"
   },
 
   chocolate: {
     id: "chocolate",
+    singular: "chocolate",
+    plural: "chocolate",
     icon: "🍫"
   },
 
   lemon: {
     id: "lemon",
+    singular: "lemon",
+    plural: "lemons",
     icon: "🍋"
   },
 
   pear: {
     id: "pear",
+    singular: "pear",
+    plural: "pears",
     icon: "🍐"
   },
 
   melon: {
     id: "melon",
+    singular: "melon",
+    plural: "melons",
     icon: "🍈"
   },
 
   iceCream: {
     id: "iceCream",
+    singular: "ice cream",
+    plural: "ice cream",
     icon: "🍦"
   },
 
   starfruit: {
     id: "starfruit",
+    singular: "starfruit",
+    plural: "starfruits",
     icon: "⭐️"
   },
 };
@@ -2385,6 +2435,8 @@ let unlockedLevels = [
   "1-1"
 ];
 
+let lastPlayedLevel = "1-1";
+
 let levelStars = {};
 
 let highScores = {};
@@ -2408,6 +2460,9 @@ let activeRecipes = [];
 
 let board = [];
 let tray = [];
+
+let howToReturnScreen =
+  "title";
 
 let gamePaused = false;
 
@@ -2598,11 +2653,6 @@ const introStarGoals =
     "intro-star-goals"
   );
 
-const blendProgressBarElement =
-  document.getElementById(
-    "blend-progress-bar"
-  );
-
 const loadButton =
   document.getElementById("load-button");
 
@@ -2664,6 +2714,66 @@ const levelNameElement =
 const levelSelectElement =
   document.getElementById(
     "level-select"
+  );
+
+const continueButton =
+  document.getElementById(
+    "continue-button"
+  );
+
+const levelSelectButton =
+  document.getElementById(
+    "level-select-button"
+  );
+
+const titleScreen =
+  document.getElementById(
+    "title-screen"
+  );
+
+const returnTitleButton =
+  document.getElementById(
+    "return-title-button"
+  );
+
+const playButton =
+  document.getElementById(
+    "play-button"
+  );
+
+const titleHowToButton =
+  document.getElementById(
+    "title-how-to-button"
+  );
+
+const howToScreen =
+  document.getElementById(
+    "how-to-screen"
+  );
+
+const howToBackButton =
+  document.getElementById(
+    "how-to-back-button"
+  );
+
+const pauseHowToButton =
+  document.getElementById(
+    "pause-how-to-button"
+  );
+
+const levelSelectScreen =
+  document.getElementById(
+    "level-select-screen"
+  );
+
+const titleLevelList =
+  document.getElementById(
+    "title-level-list"
+  );
+
+const levelSelectBackButton =
+  document.getElementById(
+    "level-select-back-button"
   );
 
 const pauseButton =
@@ -3734,36 +3844,6 @@ function renderBlender() {
     );
   }
 
-  if (blendProgressBarElement) {
-    if (
-      selectedBlender &&
-      selectedBlender.totalTime > 0
-    ) {
-      const selectedProgress =
-        selectedBlender.state === "ready"
-          ? 100
-          : Math.max(
-              0,
-              Math.min(
-                100,
-                (
-                  1 -
-                  selectedBlender.timeRemaining /
-                  selectedBlender.totalTime
-                ) * 100
-              )
-            );
-
-      blendProgressBarElement.style.width =
-        `${selectedProgress}%`;
-    }
-
-    else {
-      blendProgressBarElement.style.width =
-        "0%";
-    }
-  }
-
   loadButton.disabled =
     gamePaused ||
     levelIntroActive ||
@@ -3902,8 +3982,11 @@ function discardFruit(index) {
       
       updateScoreDisplay();
   
+    const fruitInfo =
+      FRUIT_LIBRARY[discardedFruit];
+
     messageElement.textContent =
-      `Discarded 1 ${discardedFruit}.`;
+      `Discarded ${fruitInfo.singular}!`;
   
     renderAll();
   }
@@ -4065,8 +4148,11 @@ function finishSelection() {
       fruitName
     );
 
+    const fruitInfo =
+      FRUIT_LIBRARY[fruitName];
+
     messageElement.textContent =
-      `Harvested ${amount} ${fruitName}!`;
+      `Harvested ${selectedTiles.length} ${fruitInfo.plural}!`;
 
     resetSelection();
 
@@ -4115,8 +4201,11 @@ function finishSelection() {
       fruitName
     );
 
+    const fruitInfo =
+      FRUIT_LIBRARY[fruitName];
+
     messageElement.textContent =
-      `Harvested ${group.length} ${fruitName}!`;
+      `Harvested ${group.length} ${fruitInfo.plural}!`;
   }
 
   resetSelection();
@@ -4305,6 +4394,7 @@ function startManualReshuffle() {
   playSound("reshuffle");
 
   reshuffling = true;
+  renderRefreshButton();
 
   reshuffleTimeRemaining =
     RESHUFFLE_TIME;
@@ -4326,6 +4416,7 @@ function finishManualReshuffle() {
   shuffleUntilPlayable();
 
   reshuffling = false;
+  renderRefreshButton();
 
   reshuffleTimeRemaining = 0;
 
@@ -4347,6 +4438,7 @@ function finishManualReshuffle() {
 
 function cancelReshuffle() {
   reshuffling = false;
+  renderRefreshButton();
   reshuffleTimeRemaining = 0;
 
   boardElement.classList.remove(
@@ -4373,6 +4465,7 @@ function refreshBoard() {
   }
 
   refreshesRemaining--;
+  playSound("refresh");
 
   resetSelection();
 
@@ -4538,6 +4631,7 @@ function harvestGroup(
   playSound("harvest");
 
   boardAnimating = true;
+  renderRefreshButton();
 
   /*
    * First add the harvested fruit
@@ -4598,7 +4692,7 @@ function harvestGroup(
      */
     setTimeout(() => {
       boardAnimating = false;
-    
+      renderRefreshButton();
       checkForDeadBoard();
     }, 300);
 
@@ -4645,6 +4739,7 @@ function checkForDeadBoard() {
     "No moves! Automatic reshuffle!";
 
   boardAnimating = true;
+  renderRefreshButton();
 
   boardElement.classList.add(
     "reshuffling"
@@ -4664,6 +4759,7 @@ function checkForDeadBoard() {
     renderBoard();
 
     boardAnimating = false;
+    renderRefreshButton();
 
   }, 700);
 }
@@ -5253,6 +5349,48 @@ function updateScoreDisplay() {
     gamePaused ||
     levelIntroActive ||
     levelComplete;
+
+    console.log({
+  refreshesRemaining,
+  boardAnimating,
+  reshuffling,
+  gamePaused,
+  levelIntroActive,
+  levelComplete
+});
+}
+
+function showHowToPlay(
+  returnScreen
+) {
+  howToReturnScreen =
+    returnScreen;
+
+  howToScreen.classList.remove(
+    "hidden"
+  );
+}
+
+function closeHowToPlay() {
+  howToScreen.classList.add(
+    "hidden"
+  );
+
+  if (
+    howToReturnScreen === "title"
+  ) {
+    titleScreen.classList.remove(
+      "hidden"
+    );
+  }
+
+  if (
+    howToReturnScreen === "pause"
+  ) {
+    pauseScreen.classList.remove(
+      "hidden"
+    );
+  }
 }
 
   function pauseGame() {
@@ -5265,6 +5403,7 @@ function updateScoreDisplay() {
     }
   
     gamePaused = true;
+    renderRefreshButton();
   
     pauseScreen.classList.remove(
       "hidden"
@@ -5285,6 +5424,7 @@ function updateScoreDisplay() {
     }
   
     gamePaused = false;
+    renderRefreshButton();
   
     pauseScreen.classList.add(
       "hidden"
@@ -5340,6 +5480,8 @@ function updateScoreDisplay() {
   
     currentLevel =
       level;
+
+    lastPlayedLevel = levelId;
   
     ROWS =
       level.rows;
@@ -5412,6 +5554,7 @@ function updateScoreDisplay() {
     playSound("levelComplete");
 
     levelComplete = true;
+    renderRefreshButton();
 
     cancelReshuffle();
 
@@ -5451,13 +5594,13 @@ function updateScoreDisplay() {
         "none";
     }
 
-    saveProgress();
-
     renderLevelSelector();
 
     if (starsEarned >= 1) {
       unlockNextLevel();
     }
+
+    saveProgress();
 
     renderLevelSelector();
   
@@ -5572,10 +5715,13 @@ function renderLevelSelector() {
 
 function startLevelFromIntro() {
   levelIntroActive = false;
+  renderRefreshButton();
 
   levelIntroScreen.classList.add(
     "hidden"
   );
+
+  pauseButton.disabled = false;
 
   lastUpdateTime =
     performance.now();
@@ -5587,6 +5733,8 @@ function startLevelFromIntro() {
 
 function showLevelIntro() {
   levelIntroActive = true;
+  pauseButton.disabled = true;
+  renderRefreshButton();
 
   introLevelNumber.textContent =
     `Level ${currentLevelId}`;
@@ -5694,7 +5842,8 @@ function saveProgress() {
   const saveData = {
     unlockedLevels,
     levelStars,
-    highScores
+    highScores,
+    lastPlayedLevel
   };
 
   localStorage.setItem(
@@ -5743,6 +5892,23 @@ function loadProgress() {
       highScores =
         parsedData.highScores;
     }
+
+    if (
+      typeof parsedData.lastPlayedLevel ===
+        "string"
+    ) {
+      lastPlayedLevel =
+        parsedData.lastPlayedLevel;
+    }
+
+    if (
+      !LEVELS[lastPlayedLevel] ||
+      !unlockedLevels.includes(
+        lastPlayedLevel
+      )
+    ) {
+      lastPlayedLevel = "1-1";
+    }
   }
   catch (error) {
     console.error(
@@ -5767,6 +5933,103 @@ function resetSaveData() {
   console.log(
     "Save data reset."
   );
+}
+
+function hasSavedProgress() {
+  return (
+    unlockedLevels.length > 1 ||
+    Object.keys(levelStars).length > 0 ||
+    Object.keys(highScores).length > 0
+  );
+}
+
+function renderTitleScreen() {
+  const hasProgress =
+    hasSavedProgress();
+
+  playButton.classList.toggle(
+    "hidden",
+    hasProgress
+  );
+
+  continueButton.classList.toggle(
+    "hidden",
+    !hasProgress
+  );
+
+  levelSelectButton.classList.toggle(
+    "hidden",
+    !hasProgress
+  );
+}
+
+function renderTitleLevelSelect() {
+  titleLevelList.innerHTML = "";
+
+  for (
+    const levelId of LEVEL_ORDER
+  ) {
+    if (
+      !unlockedLevels.includes(
+        levelId
+      )
+    ) {
+      continue;
+    }
+
+    const level =
+      LEVELS[levelId];
+
+    const stars =
+      levelStars[levelId] || 0;
+
+    const highScore =
+      highScores[levelId] || 0;
+
+    const button =
+      document.createElement(
+        "button"
+      );
+
+    button.className =
+      "title-level-button";
+
+    const starText =
+      "⭐".repeat(stars) +
+      "☆".repeat(3 - stars);
+
+    button.innerHTML = `
+      <strong>
+        ${levelId} - ${level.name}
+      </strong>
+
+      <span>
+        ${starText}
+      </span>
+
+      <small>
+        Best: ${highScore}
+      </small>
+    `;
+
+    button.addEventListener(
+      "click",
+      () => {
+        levelSelectScreen
+          .classList.add(
+            "hidden"
+          );
+
+        loadLevel(levelId);
+
+        saveProgress();
+      }
+    );
+
+    titleLevelList.appendChild(
+      button
+    );
+  }
 }
 
   function restartGame() {
@@ -5805,6 +6068,8 @@ function resetSaveData() {
     );
 
     gamePaused = false;
+    pauseButton.disabled = false;
+    renderRefreshButton();
 
     pauseScreen.classList.add(
       "hidden"
@@ -5942,6 +6207,48 @@ restartButton.addEventListener(
     refreshBoard
   );
 
+  playButton.addEventListener(
+  "click",
+  () => {
+    titleScreen.classList.add(
+      "hidden"
+    );
+
+    loadLevel("1-1");
+
+    saveProgress();
+  }
+);
+
+titleHowToButton.addEventListener(
+  "click",
+  () => {
+    howToReturnScreen = "title";
+
+    titleScreen.classList.add(
+      "hidden"
+    );
+
+    showHowToPlay("title");
+  }
+);
+
+howToBackButton.addEventListener(
+  "click",
+  closeHowToPlay
+);
+
+pauseHowToButton.addEventListener(
+  "click",
+  () => {
+    pauseScreen.classList.add(
+      "hidden"
+    );
+
+    showHowToPlay("pause");
+  }
+);
+
   pauseButton.addEventListener(
     "click",
     pauseGame
@@ -5965,11 +6272,55 @@ restartButton.addEventListener(
     );
   }
 );
+
+levelSelectButton.addEventListener(
+  "click",
+  () => {
+    titleScreen.classList.add(
+      "hidden"
+    );
+
+    renderTitleLevelSelect();
+
+    levelSelectScreen.classList.remove(
+      "hidden"
+    );
+  }
+);
+
+levelSelectBackButton.addEventListener(
+  "click",
+  () => {
+    levelSelectScreen.classList.add(
+      "hidden"
+    );
+
+    titleScreen.classList.remove(
+      "hidden"
+    );
+  }
+);
+
+continueButton.addEventListener(
+  "click",
+  () => {
+    titleScreen.classList.add(
+      "hidden"
+    );
+
+    loadLevel(
+      lastPlayedLevel
+    );
+
+    saveProgress();
+  }
+);
   
   restartLevelButton.addEventListener(
     "click",
     () => {
       gamePaused = false;
+      renderRefreshButton();
   
       pauseScreen.classList.add(
         "hidden"
@@ -5980,6 +6331,26 @@ restartButton.addEventListener(
       restartGame();
     }
   );
+
+returnTitleButton.addEventListener(
+  "click",
+  () => {
+    gamePaused = false;
+    levelComplete = true;
+
+    pauseScreen.classList.add(
+      "hidden"
+    );
+
+    stopAllBlenderSounds();
+
+    titleScreen.classList.remove(
+      "hidden"
+    );
+
+    renderTitleScreen();
+  }
+);
 
   document.addEventListener(
     "keydown",
@@ -6015,5 +6386,4 @@ window.addEventListener(
 );
 
 loadProgress();
-
-loadLevel("1-1");
+renderTitleScreen();
